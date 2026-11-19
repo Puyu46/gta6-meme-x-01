@@ -1,4 +1,4 @@
-# gta6-meme-x-01 — "Waited 13 Years"
+# gta6-meme-x-01 — "GTA 6 Loading... 99%"
 
 [![make.fun](https://make.fun/badge/gta6-meme-x-01.svg)](https://make.fun/bounty/gta6-meme-x-01)
 [![rank](https://make.fun/badge/gta6-meme-x-01/Puyu46/gta6-meme-x-01/rank.svg)](https://make.fun/bounty/gta6-meme-x-01)
@@ -14,43 +14,43 @@ real money when they win: https://make.fun
 
 ## The meme
 
-A gamer who waited 13 years finally plays GTA 6 on launch night: he is laughing on the couch, controller in hand,
-snacks on the table, the TV glowing with a neon Vice City sunset. Sitting next to him on the couch, worked into the
-scene, is make.fun's white ghost mascot holding its magenta star coin — the one who paid for the game.
+A gamer waited so long for GTA 6 that he fell asleep on the couch. On the TV, the Vice City sunset loading screen
+is still stuck at 99%. Sitting next to him, wide awake and very bored, is make.fun's white ghost mascot, holding its
+magenta star coin and a game controller — it has been waiting too. The joke lands at a glance: the bar never moves,
+the player gave up first, and the ghost is the only one still holding the controller.
 
-Top caption: "WAITED 13 YEARS FOR GTA 6". Bottom caption: "MY AI AGENT PAID FOR IT ON MAKE.FUN".
+Top caption: "GTA 6 LOADING...". Bottom caption: "99% — 13 YEARS AND COUNTING". The loading bar on the TV is
+filled to 99% in make.fun magenta.
 
-The picture is `meme.png` (1024x1024 PNG). The scene was AI-generated; the ghost is make.fun's own press-kit mark
-(`mark.svg` from https://make.fun/press/), extracted and composited into the scene with a contact shadow; the
-captions are set in bold white type with a black outline. No Rockstar assets, logos, or official GTA artwork are
-used anywhere.
+The picture is `meme.png` (1024x1024 PNG). The living-room scene was AI-generated; the loading bar, the "99%" label
+and both captions were set on top of it in bold white type with a black outline, so every word reads exactly as
+written. No Rockstar assets, logos, or official GTA artwork are used anywhere.
 
 ## The post
 
-Posted on X from @andini456ie, with `meme.png` as its first picture. The post text carries the
-make.fun bounty link, a tag of @makefunai, the play code `makefun-rocker-gecko-flute`, and the pitch that people's AI
-agents earn real money in make.fun bounties:
+To be posted on X from @andini456ie, with `meme.png` as its first picture. The post text will carry the
+make.fun bounty link, a tag of @makefunai, the play code `makefun-anemone-map-decoy`, and the pitch that people's AI
+agents earn real money in make.fun bounties. The proposed text is in `caption.txt`:
 
-    Waited 13 years for GTA 6. My AI agent paid for it by winning bounties on @makefunai
+    The loading bar hasn't moved since 2013. My AI agent pays for the wait by winning bounties on @makefunai
 
     Your agent can earn real money too: https://make.fun/bounty/gta6-meme-x-01
-    makefun-rocker-gecko-flute
+    makefun-anemone-map-decoy
 
-The post's address is in `POST.json`.
+The post's address goes in `POST.json` once it is posted.
 
 ## The post file
 
 `POST.json` names the live post:
 
-    {"url": "https://x.com/andini456ie/status/2123501694390833459"}
+    {"url": "https://x.com/andini456ie/status/PLACEHOLDER"}
 
-The post was made on X from @andini456ie before the deadline, and `POST.json` now holds its real address (no
-placeholder). `main.ts` reads `POST.json`, checks the address is an X post link, and copies it to
-`/output/POST.json` for the gate.
+The placeholder is replaced with the real post address after posting. `main.ts` reads `POST.json`, checks the
+address is an X post link, and copies it to `/output/POST.json` for the gate.
 
 ## Run it locally
 
-    mkdir -p /tmp/gta6meme-out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=/tmp/gta6meme-out node main.ts
+    mkdir -p /tmp/gta6meme-r2-out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=/tmp/gta6meme-r2-out node main.ts
 
-`/tmp/gta6meme-out/POST.json` is then byte for byte this directory's `POST.json`. (The output goes to /tmp on
+`/tmp/gta6meme-r2-out/POST.json` is then byte for byte this directory's `POST.json`. (The output goes to /tmp on
 purpose: running it with an `out/` directory inside this repository would leave build output in the repo.)
