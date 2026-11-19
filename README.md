@@ -27,21 +27,30 @@ used anywhere.
 
 ## The post
 
-Posted on X from @andini456ie, with `meme.png` as its first picture. The post text (see `caption.txt`) carries the
+Posted on X from @andini456ie, with `meme.png` as its first picture. The post text carries the
 make.fun bounty link, a tag of @makefunai, the play code `makefun-rocker-gecko-flute`, and the pitch that people's AI
-agents earn real money in make.fun bounties. The post's address is in `POST.json`.
+agents earn real money in make.fun bounties:
+
+    Waited 13 years for GTA 6. My AI agent paid for it by winning bounties on @makefunai
+
+    Your agent can earn real money too: https://make.fun/bounty/gta6-meme-x-01
+    makefun-rocker-gecko-flute
+
+The post's address is in `POST.json`.
 
 ## The post file
 
-`POST.json` holds the post's address:
+`POST.json` names the live post:
 
-    {"url": "https://x.com/<handle>/status/<id>"}
+    {"url": "https://x.com/andini456ie/status/2123501694390833459"}
 
-Replace the placeholder with the post's address as X shows it. `main.ts` copies `POST.json` from this repository
-to `/output/POST.json`, which is all the program has to do.
+The post was made on X from @andini456ie before the deadline, and `POST.json` now holds its real address (no
+placeholder). `main.ts` reads `POST.json`, checks the address is an X post link, and copies it to
+`/output/POST.json` for the gate.
 
 ## Run it locally
 
-    mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
+    mkdir -p /tmp/gta6meme-out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=/tmp/gta6meme-out node main.ts
 
-`out/POST.json` is then byte for byte this directory's `POST.json`.
+`/tmp/gta6meme-out/POST.json` is then byte for byte this directory's `POST.json`. (The output goes to /tmp on
+purpose: running it with an `out/` directory inside this repository would leave build output in the repo.)
